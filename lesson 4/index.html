@@ -5,28 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <nav id="nav-1">
-        <a class="link-1" href="#">Home</a>
-        <a class="link-1" href="#">About</a>
-        <a class="link-1" href="#">Contact</a>
-        <a class="link-1" href="#">Shop</a>
-      </nav>
-
-
-
-
-
-
-	<ul class="primary-nav with-indicator">
-	    <li class="Nav-item"><a href="#">Home</a></li>
-	    <li class="Nav-item"><a href="#">About</a></li>
-	    <li class="Nav-item is-active"><a href="#">Writing</a></li>
-	    <li class="Nav-item"><a href="#">Clients</a></li>
-	    <li class="Nav-item"><a href="#">Location</a></li>
-	    <li class="Nav-item"><a href="#">Contact</a></li>
-	</ul>
+    <h1>Ôn tập dom</h1>
+    <div id="dom_div" class="div_dom_class">123</div>
+    <div class="div_dom_class">123546</div>
+ 
+    <h1 id="show"></h1>
+    <button onclick="stop()">stop</button>
+    <script>
+        let div_dom = document.getElementById('dom_div')
+        console.log(div_dom)
+        div_dom.innerHTML = "Text được thay đổi"
+ 
+        let class_div_dom = document.getElementsByClassName('div_dom_class')
+        console.log( class_div_dom[0] );
+ 
+        function log_text(){
+            document.getElementById('show').innerHTML += 1
+        }
+   
+        let myInterval = setInterval(log_text , 1000)
+        // clearInterval(myInterval)
+        function stop() {
+            clearInterval(myInterval)
+        }
+    </script>
 </body>
 </html>
